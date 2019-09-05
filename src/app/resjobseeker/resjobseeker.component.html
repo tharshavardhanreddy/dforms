@@ -1,0 +1,51 @@
+<mat-drawer-container fullscreen class="example-container">
+        <mat-drawer mode="over" opened>
+            <img src="https://i.postimg.cc/XX637GW0/sell.png" alt="logo">
+            <h1>SELLCRAFT <br><span>GLOBAL</span><br> SOLUTIONS</h1>
+        </mat-drawer>
+        <mat-drawer-content><h2>SGS Jobseeker registration </h2>
+
+
+            
+
+            <form class="example-form" [formGroup]="form" (ngSubmit)="onsubmit (form.value)">
+                    <div class="controles-container">
+                            <input type="hidden" formControlName="$key">
+                            
+
+                <mat-form-field class="example-full-width">
+                        <input formControlName="name" name="name" matInput placeholder="Name" autocomplete="off"> 
+                        <mat-error>Name is required</mat-error>
+                    </mat-form-field>
+                        
+                    <mat-form-field>
+                        <input formControlName="username" name="username" matInput placeholder="username" autocomplete="off"> 
+                        <mat-error>Username is required</mat-error>
+                    </mat-form-field>
+                     
+                    <mat-form-field class="example-full-width">
+                            <input formControlName="mobilenumber" matInput placeholder="Mobile number">
+                            <mat-error *ngIf="form.get('mobilenumber').hasError('required')"> Mobile number required
+                            </mat-error>
+                        </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                        <input formControlName="password" matInput placeholder="Password"> 
+                        <mat-error> Password is required</mat-error>
+                    </mat-form-field>
+                 
+
+                 <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="date of birth" formControlName="dob">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                 <button mat-raised-button color="primary" type="submit">submit</button>
+
+                 
+
+                </form>    
+        </mat-drawer-content>
+      </mat-drawer-container>
+      <router-outlet></router-outlet>

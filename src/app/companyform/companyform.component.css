@@ -1,0 +1,94 @@
+
+body{
+  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+	min-height:100vh;
+  background-image: url("http://images.pexels.com/photos/2034373/pexels-photo-2034373.jpeg");
+  background-image: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+
+  -webkit-background-size: cover;
+
+-moz-background-size: cover;
+
+-o-background-size: cover;
+
+background-size: cover;
+}
+
+.fullcontainer{
+  margin: 0 240px;
+  padding-top: 30px ;
+}
+
+.container {
+    margin: 0 240px;
+   background-color: rgb(245, 243, 243);
+  }
+  
+  .fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  
+  .example-form {
+    min-width: 200px;
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .controles-container {
+    width: 100%;
+    padding: 5%;
+    padding-top: 50px;
+    margin-left: 5%;
+  }
+  
+  .controles-container > * {
+    width: 100%;
+  }
+  
+  .controles-container2 {
+    width: 100%;
+    margin-left: 25%;
+    padding-top: 10px;
+  }
+  
+  .controles-container2 > * {
+    width: 100%;
+  }
+ 
+  
+  button{
+    width: 220px;
+    margin-left: 42%;
+    padding: 8px 0;
+   margin-top: 5%;
+   margin-bottom: 5%;
+   text-transform: uppercase;
+}
+
+.select1{
+  padding-left: 5%;
+  margin-top: -10%;
+}
+
+  mat-radio-group mat-radio-button {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .example-chip-list{
+    width: 96%;
+   margin-left: 5%;
+   padding-top: 30px;
+  }
+  

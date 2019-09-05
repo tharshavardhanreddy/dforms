@@ -1,0 +1,36 @@
+<mat-drawer-container fullscreen class="example-container">
+    <mat-drawer mode="over" opened>
+        <img src="https://i.postimg.cc/XX637GW0/sell.png" alt="logo">
+        <h1>SELLCRAFT <br><span>GLOBAL</span><br> SOLUTIONS</h1>
+    </mat-drawer>
+    <mat-drawer-content>
+        <h2>Sellcraft Quickselect </h2>
+        <div class="container-images">
+            <mat-grid-list cols="2">
+                <mat-grid-tile>
+                    <div class="row">
+                        <img src="https://i.postimg.cc/pVmhGgbF/office.png" id="image1" alt="office">
+
+                        <a mat-raised-button routerLink="/companyform" id="button">Company's HR</a>
+                        <h4 class="text"> HR profisionals can post their requirements here</h4>
+                    </div>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <div class="row">
+                        <img src="https://i.postimg.cc/h4sysQnj/seeker.png" id="image2" alt="seeker">
+
+                        <a mat-raised-button routerLink="/jobseeker" id="button">I am Jobseeker</a>
+                        <h4 class="text"> Jobseekers can post their details here</h4>
+
+                    </div>
+
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </div>
+
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<router-outlet></router-outlet>

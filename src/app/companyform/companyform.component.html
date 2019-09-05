@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+</head>
+
+<body>
+    <!-- <div class="fullbody"> -->
+        <div class="fullcontainer">
+
+        <mat-toolbar color="primary">
+            <span class="fill-remaining-space"></span>
+            <span>Human Resource-Form</span>
+            <span class="fill-remaining-space"></span>
+        </mat-toolbar>
+        </div>
+
+
+
+        <div class="container">
+        <form class="example-form" [formGroup]="form" (ngSubmit)="onsubmit(form.value)">
+            <mat-grid-list cols="2" rowHeight="500px">
+                <mat-grid-tile>
+                    <div class="controles-container">
+
+                        <input type="hidden" formControlName="$key">
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="cname" matInput placeholder="Name of the company*">
+                            <mat-error>Authorised company's name is required</mat-error>
+                        </mat-form-field>
+
+                       
+
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="mobilenumber" matInput placeholder="Authorised person's Mobile number*">
+                            <mat-error *ngIf="form.get('mobilenumber').hasError('required')"> Mobile number required
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="aname" matInput placeholder="Authorised person's name*">
+                            <mat-error>Authorised person's name is required</mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="designation" matInput placeholder="Required designation">
+                        </mat-form-field>
+
+
+<!-- 
+                        <mat-form-field>
+
+                            <mat-select formControlName="years" placeholder="Exp in years*">
+                                <mat-option>None</mat-option>
+                                <ng-container *ngFor="let years of year">
+                                    <mat-option value="{{years.id}}">{{years.value}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                            <mat-error>Experience required</mat-error>
+                        </mat-form-field> -->
+
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="controles-container2">
+                       
+                            <div class="add-bottom-pading">
+                                    <mat-radio-group formControlName="position">
+                                        <mat-radio-button value="1">For Contract</mat-radio-button>
+                                        <mat-radio-button value="2">For Permenant</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+
+                        <!-- <mat-form-field>
+                                <mat-select formControlName="skills" placeholder="Skills" multiple>
+                                    <mat-option>None</mat-option>
+                                    <ng-container *ngFor="let skills of skill">
+                                        <mat-option value="{{skills.id}}">{{skills.value}}</mat-option>
+                                    </ng-container>
+                                </mat-select>
+                            </mat-form-field> -->
+
+                            <mat-form-field class="example-full-width">
+                                <input formControlName="email" matInput placeholder="Authorised person's Email*">
+                                <mat-error> Invalid email format</mat-error>
+                            </mat-form-field>
+                    
+
+                        <mat-form-field>
+                            <mat-select formControlName="ctc" placeholder="ctc in lakhs" multiple>
+                                <mat-option>None</mat-option>
+                                <ng-container *ngFor="let ctc of ectc">
+                                    <mat-option value="{{ctc.id}}">{{ctc.value}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="vacancy" matInput placeholder="No.of vacancies">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                            <input formControlName="location" matInput placeholder="Job location">
+                        </mat-form-field>
+
+                        <!-- <mat-form-field>
+                            <mat-select formControlName="months" placeholder="in months*">
+                                <mat-option>None</mat-option>
+                                <ng-container *ngFor="let months of month">
+                                    <mat-option value="{{months.id}}">{{months.value}}</mat-option>
+                                </ng-container>
+                            </mat-select>
+                            <mat-error>Experiences required</mat-error>
+                        </mat-form-field> -->
+                    </div>
+                </mat-grid-tile>
+            
+           
+            <mat-form-field class="example-chip-list">
+                <mat-chip-list #chipList aria-label="skill selection">
+                    <mat-chip *ngFor="let skill of skills" [selectable]="selectable" [removable]="removable"
+                        (removed)="remove(skill)">
+                        {{skill}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input formControlName="skills" placeholder="Add Skills...*" #skillInput
+                        [formControl]="skillCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                        [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+                       
+                    </mat-chip-list>
+                    
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let skill of filteredSkills | async" [value]="skill">
+                        {{skill}}
+                    </mat-option>
+                </mat-autocomplete>
+                
+               
+            </mat-form-field>
+           
+        </mat-grid-list>
+
+        <div class="select1">
+
+        <mat-form-field>
+
+            <mat-select formControlName="years" placeholder="Exp in years*">
+                <mat-option>None</mat-option>
+                <ng-container *ngFor="let years of year">
+                    <mat-option value="{{years.id}}">{{years.value}}</mat-option>
+                </ng-container>
+            </mat-select>
+            <mat-error>Experience required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="months" placeholder="in months*">
+                <mat-option>None</mat-option>
+                <ng-container *ngFor="let months of month">
+                    <mat-option value="{{months.id}}">{{months.value}}</mat-option>
+                </ng-container>
+            </mat-select>
+            <mat-error>Experiences required</mat-error>
+        </mat-form-field>
+
+    </div>
+
+            <button mat-raised-button color="primary" type="submit" >submit</button>
+
+        </form>
+    </div>
+    <!-- </div> -->
+</body>
+
+</html>
+
+
+
+
+<router-outlet></router-outlet>

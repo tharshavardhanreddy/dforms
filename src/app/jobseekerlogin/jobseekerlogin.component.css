@@ -1,0 +1,79 @@
+.example-container {
+   height:100vh;
+   width: 100%;
+   /* background-image: url("http://speedwave.co.in/New%20SW/assets/images/slider/n6.jpg"); */
+   /* background-image: url("https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
+   background-image: url("https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+   background-image: cover;
+   /* background-size: 90% 90%; */
+  }
+
+  mat-drawer, mat-drawer-content{
+      padding: 16px;
+  }
+
+  mat-drawer{
+      width: 420px;
+      background-color: rgb(250, 249, 249);
+      /* background-image: url("https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); */
+      background-image: url("https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+      background-image: cover;
+      
+
+  }
+
+  h1{
+      color: rgb(56, 106, 197);
+     /* padding-top: 10%; */
+     padding-left: 3%;
+     font-size: 3rem;
+     text-align: center;
+     text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: lighter;
+}
+
+  img{
+      /* margin-right: 5%; */
+      width: 250px;
+      height: 220px;
+      padding-top: 30%;
+      padding-left: 17%;
+  }
+
+  .controles-container {
+    width: 30%;
+    padding: 5px;
+    padding-left: 34%;
+    padding-top: 4%;
+  }
+
+  .controles-container > * {
+    width: 100%;
+  }
+
+  button{
+    width: 200px;
+    margin-left: 34%; 
+    padding: 8px;
+    margin-top: 10px;
+    
+}
+
+h2{
+    padding-top: 110px;
+    color: rgb(56, 106, 197);
+   /* padding-top: 10%; */
+   /* padding-left: 3%; */
+   font-size: 3rem;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-right{
+  
+    font-size: 1.2rem;
+    margin:0px 80px;
+}
+
